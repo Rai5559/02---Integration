@@ -6,7 +6,7 @@ export default function Detail() {
   const { detailId } = useParams();
   const [character, setCharacter] = useState({});
 
-  const urlBASE = "http://localhost:3001/rickandmorty";
+  const urlBASE = "http://localhost:3001";
 
   useEffect(() => {
     fetch(`${urlBASE}/detail/${detailId}`)

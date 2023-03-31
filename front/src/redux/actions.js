@@ -19,16 +19,16 @@ export const rmvFavorite=(id)=>{
     }
 }
 
-// export const filterCards=(gender)=>{
-//     return{
-//         type: FILTER,
-//         payload:gender
-//     }
-// }
+export const filterCards=(gender)=>{
+    return{
+        type: FILTER,
+        payload:gender
+    }
+}
 
-// export const orderCards=(id)=>{
-//     return{
-//         type: ORDER,
-//         payload:ID
-//     }
-// }
+export const orderCards=(id)=>{
+    return{
+        type: ORDER,
+        payload:id
+    }
+}

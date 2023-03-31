@@ -17,7 +17,7 @@ function App () {
 
   const onSearch=(id)  => {
 
-    const urlBASE="http://localhost:3001/rickandmorty";
+    const urlBASE="http://localhost:3001";
     // const urlBASE="https://be-a-rym.up.railway.app/api";
     // const key="5c7b65ba57e1.21d29bcea914b4f4d504";
 
