@@ -4,7 +4,7 @@ export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #003366; /* Usamos un color azul oscuro */
+  background-color: #003366; 
   padding: 10px 30px;
   border-radius: 20px;
 `;
@@ -33,7 +33,7 @@ export const NavItem = styled.div`
   }
 
   & h3:hover {
-    color: #ffcc00; /* Cambiamos el color al hacer hover */
+    color: #ffcc00; 
   }
 `;
 

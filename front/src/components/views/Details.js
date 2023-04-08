@@ -20,6 +20,28 @@ export const DivContainer = styled.div`
     height: auto;
     border-radius: 10px;
   }
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .loading-image {
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+    border-style: double;
+    border-color: #ffcc00;
+  }
+
+  .loading-text {
+    align-self: center;
+    font-family: 'Get Schwifty', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 `;
 
 export const H1Title = styled.h1`

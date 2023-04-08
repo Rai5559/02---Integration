@@ -1,15 +1,10 @@
+import axios from "axios";
 
 export const ADD_FAVORITE="ADD_FAVORITE";
 export const RMV_FAVORITE="RMV_FAVORITE"
 export const FILTER="FILTER";
 export const ORDER="ORDER";
-
-export const addFavorite=(character)=>{
-    return {
-        type: ADD_FAVORITE,
-        payload:character
-    }
-}
+export const GET_FAVORITES="GET_FAVORITES";
 
 
 export const rmvFavorite=(id)=>{
@@ -32,3 +27,11 @@ export const orderCards=(id)=>{
         payload:id
     }
 }
+
+export const getFavorites = () => {
+    return async function (dispatch) {
+      const URL_BASE = "http://localhost:3001";
+      const response = await axios.get(`${URL_BASE}/rickandmorty/fav`);
+      dispatch({ type: GET_FAVORITES, payload: response.data });
+    };
+  };

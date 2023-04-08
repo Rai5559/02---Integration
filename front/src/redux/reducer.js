@@ -1,4 +1,4 @@
-import { ADD_FAVORITE, FILTER, RMV_FAVORITE, ORDER } from "./actions";
+import { ADD_FAVORITE, FILTER, RMV_FAVORITE, ORDER, GET_FAVORITES } from "./actions";
 
 const initialState = {
   myFavorites: [],
@@ -24,19 +24,25 @@ const reducer = (state = initialState, action) => {
 
       case FILTER:
             
-            const allCharactersFIltered=state.allCharacters.filter(char=>char.gender===action.payload)
-            return {
-                ...state,
-                myFavorites: allCharactersFIltered
-            }
+      const filteredChars = state.myFavorites.filter((element) => element.gender === action.payload)
+      return{
+          ...state,
+          myFavorites: filteredChars
+      }
 
         case ORDER:
             return{
                 ...state,
                 myFavorites:
                 action.payload === "Ascendente"
-                ? state.allCharacters.sort((a,b)=>a.id-b.id)
-                : state.allCharacters.sort((a,b)=>b.id-a.id)
+                ? state.myFavorites.sort((a,b)=>a.id-b.id)
+                : state.myFavorites.sort((a,b)=>b.id-a.id)
+            }
+
+        case GET_FAVORITES:
+            return{
+                ...state,
+                myFavorites: action.payload
             }
 
 

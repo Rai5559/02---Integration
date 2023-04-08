@@ -1,17 +1,20 @@
 import { CardStyle, CloseButton } from "./cardStyles";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import { getFavorites } from "../../redux/actions";
 import axios from "axios";
 
 
 function Card({id,onClose,name,species,gender,image, myFavorites}) {
 
    const [isFav, setIsFav]=useState(false);
+   const dispatch=useDispatch();
 
    async function addFavorite(fav){
       try{
          const response=await axios.post("http://localhost:3001/rickandmorty/fav",fav);
+         dispatch(getFavorites())
          console.log(response);
       }
       catch(error){
@@ -28,6 +31,7 @@ function Card({id,onClose,name,species,gender,image, myFavorites}) {
    async function rmvFavorite(id){
       try{
          const response=await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+         dispatch(getFavorites())
          console.log(response);
       }
       catch(error){

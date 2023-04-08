@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Card from "../Card/Card";
-import { CardsStyle } from "./favStyled";
+import { CardsStyle, FilterContainer, FilterOption, FilterSelect } from "./favStyled";
 import { useDispatch } from "react-redux";
 import { orderCards,filterCards } from "../../redux/actions";
 
@@ -9,28 +9,31 @@ const Favorites=({myFavorites})=>{
 
     const handleOrder=(event)=>{
         dispatch(orderCards(event.target.value))
+        console.log(event.target.value);
     }
 
     const handleFilter=(event)=>{
         dispatch(filterCards(event.target.value))
+        console.log(event.target.value);
     }
 
     return(
         <CardsStyle>
-            <div>
-                <select onChange={handleOrder}>
-                    <option value="order" disabled="disabled"></option>
-                    <option value="Ascendente">Ascendente</option>
-                    <option value="Descendente">Descendente</option>
-                </select>
-                <select onChange={handleFilter}>
-                    <option value="filter" disabled="disabled"></option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Unknown">Unknown</option>
-                    <option value="Genderless">Genderless</option>
-                </select>
-            </div>
+            <FilterContainer>
+                <FilterSelect onChange={handleOrder}>
+                    <FilterOption value="order" disabled="disabled"></FilterOption>
+                    <FilterOption value="Ascendente">Ascendente</FilterOption>
+                    <FilterOption value="Descendente">Descendente</FilterOption>
+                </FilterSelect>
+                <FilterSelect onChange={handleFilter}>
+                    <FilterOption value="filter" disabled="disabled"></FilterOption>
+                    <FilterOption value="Male">Male</FilterOption>
+                    <FilterOption value="Female">Female</FilterOption>
+                    <FilterOption value="Unknown">Unknown</FilterOption>
+                    <FilterOption value="Genderless">Genderless</FilterOption>
+                </FilterSelect>
+            </FilterContainer>
+            <div className="cards">
             {myFavorites.map(({id,name,species,gender,image})=>{
                 return(
                     <Card
@@ -43,6 +46,8 @@ const Favorites=({myFavorites})=>{
                     />
                 )
             })}
+            </div>
+            
         </CardsStyle>
     )
 }
