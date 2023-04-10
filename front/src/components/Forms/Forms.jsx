@@ -29,7 +29,7 @@ const Forms = (props)=>{
 
 
     return (
-        <FormStyle onSubmit={submitHandler}>
+        <FormStyle onSubmit={submitHandler} autocomplete="off">
 
             
             <DivForm >
@@ -42,7 +42,7 @@ const Forms = (props)=>{
 
                 <div>
                     <Label htmlFor="password">Password: </Label>
-                    <Input type="text" name="password" onChange={handleChange} value={userData.password}/>
+                    <Input type="text" name="password" onChange={handleChange} value={userData.password} />
                     <Error>{errors.password}</Error>
                  </div>
             

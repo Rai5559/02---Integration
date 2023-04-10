@@ -7,4 +7,5 @@ export const CardsStyle = styled.div`
   justify-content: space-between; 
   padding: 1rem;
   text-align: center; 
+  margin-top: 250px;
 `;

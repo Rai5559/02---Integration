@@ -5,7 +5,7 @@ export const CardsStyle = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  
+  margin-top: 250px;
   .filters {
     display: flex;
     flex-direction: row;
@@ -18,6 +18,7 @@ export const CardsStyle = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 50px;
   }
 `;
 
@@ -25,6 +26,7 @@ export const FilterContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  position: fixed;
 `;
 
 export const FilterSelect = styled.select`

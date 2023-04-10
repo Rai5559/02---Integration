@@ -48,7 +48,7 @@ export default function Detail() {
       ) : (
         <div className="loading-container">
           <img className="loading-image" src="https://avowhcbwko.cloudimg.io/v7/https://empreender.nyc3.cdn.digitaloceanspaces.com/grupowhats/c8bdb1368e8adea71244dc6a8d9f4a96?w=400&org_if_sml=1" alt="Loading..." />
-          <h3 className="loading-text">Cargando...</h3>
+          <h3 className="loading-text">Loading...</h3>
         </div>
       )}
     </DivContainer>

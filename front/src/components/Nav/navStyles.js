@@ -7,6 +7,7 @@ export const NavContainer = styled.nav`
   background-color: #003366; 
   padding: 10px 30px;
   border-radius: 20px;
+  position: fixed;
 `;
 
 export const NavLinksContainer = styled.div`

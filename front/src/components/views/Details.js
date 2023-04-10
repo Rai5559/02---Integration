@@ -11,6 +11,7 @@ export const DivContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 250px;
 
 
   img {
@@ -28,8 +29,6 @@ export const DivContainer = styled.div`
   }
 
   .loading-image {
-    height: 20%;
-    width: 20%;
     border-radius: 50%;
     border-style: double;
     border-color: #ffcc00;
@@ -38,9 +37,10 @@ export const DivContainer = styled.div`
   .loading-text {
     align-self: center;
     font-family: 'Get Schwifty', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 5px;
   }
 `;
 
